@@ -24,8 +24,10 @@ public class Deleteservlet extends HttpServlet{
 		dao.deleteStudent(id);
 		
 		req.setAttribute("list", dao.getAllStudents());
-		RequestDispatcher dispatcher = req.getRequestDispatcher("display.jsp");
-		dispatcher.forward(req, resp);
+		resp.sendRedirect("display");
+
+//		RequestDispatcher dispatcher = req.getRequestDispatcher("display.jsp");
+//		dispatcher.forward(req, resp);
 		
 		
 	}

@@ -26,7 +26,6 @@ public class Signupservlet extends HttpServlet{
 		String name=req.getParameter("name");
 		String address=req.getParameter("address");
 		String email=req.getParameter("email");
-
 		String course1=req.getParameter("course1");
 		String course2=req.getParameter("course2");
 		String course3=req.getParameter("course3");
@@ -107,24 +106,7 @@ public class Signupservlet extends HttpServlet{
 //		}
 			
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		long phone=Long.parseLong(req.getParameter("phone"));
 //		int paidfees=Integer.parseInt(req.getParameter("fees"));
@@ -208,8 +190,10 @@ public class Signupservlet extends HttpServlet{
 			List<Student> list1=studentDao.getAllStudents();
 			req.setAttribute("list", list1);
 //			req.setAttribute("message","Student Added Successfully");
-			RequestDispatcher dispatcher=req.getRequestDispatcher("display.jsp");
-			dispatcher.forward(req, resp);
+			resp.sendRedirect("display");
+//			resp.sendRedirect("display.jsp");
+//			RequestDispatcher dispatcher=req.getRequestDispatcher("display.jsp");
+//			dispatcher.forward(req, resp);
 		}
 		
 		else {

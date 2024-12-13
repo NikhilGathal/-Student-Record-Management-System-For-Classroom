@@ -80,15 +80,6 @@ public class Student {
 				+ remainfees + "]";
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
 }

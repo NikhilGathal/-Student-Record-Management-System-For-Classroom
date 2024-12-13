@@ -30,8 +30,6 @@ public class Editservlet extends HttpServlet{
 		String course = req.getParameter("course");
 		long phone = Long.parseLong(req.getParameter("phone"));
 		int fees = Integer.parseInt(req.getParameter("fees"));
-		
-		
 		int remainfees = Integer.parseInt(req.getParameter("remainfees"));
 		int paidfees = Integer.parseInt(req.getParameter("paidfees"));
 		
@@ -60,16 +58,7 @@ public class Editservlet extends HttpServlet{
 				course = course + "," + string  ; 
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		
 		System.out.println("course selected in edit page" + course);
 		
@@ -88,42 +77,10 @@ public class Editservlet extends HttpServlet{
 			
 			
 		}
-			
-		
 		
 		System.out.println("total fees is" + totalf);
 		System.out.println("remain fees" + remainfees);
 		System.out.println("paid fees " + paidfees);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		StudentDao dao = new StudentDao();
 		List<Student> students = dao.getAllStudents();
@@ -208,8 +165,10 @@ public class Editservlet extends HttpServlet{
 			
 			dao.updateStudent(student);
 			req.setAttribute("list", students);
-			RequestDispatcher dispatcher = req.getRequestDispatcher("display.jsp");
-			dispatcher.forward(req, resp);
+			resp.sendRedirect("display");
+//			resp.sendRedirect("display.jsp");
+//			RequestDispatcher dispatcher = req.getRequestDispatcher("display.jsp");
+//			dispatcher.forward(req, resp);
 		} else {
 			req.setAttribute("message", "Email already exist");
 			req.setAttribute("student", dao.findStudentById(id));

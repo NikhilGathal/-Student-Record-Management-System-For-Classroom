@@ -37,8 +37,10 @@ public class Loginservlet extends HttpServlet{
 			if(password.equals("@Nikhil77"))
 			{
 				req.setAttribute("list", list);
-				RequestDispatcher dispatcher = req.getRequestDispatcher("display.jsp");
-				dispatcher.forward(req, resp);
+//				resp.sendRedirect("display.jsp");
+				resp.sendRedirect("display");
+//				RequestDispatcher dispatcher = req.getRequestDispatcher("display.jsp");
+//				dispatcher.forward(req, resp);
 			}
 			
 			else	

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login Page</title>
 
 <style>
     body {
@@ -30,8 +30,6 @@ h1 {
 label {
   display: block;
   margin-bottom: 5px;
-   position:relative;
-  left : 20px;
 }
 
 input[type="text"],
@@ -42,8 +40,6 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-bottom: 10px;
-  position:relative;
-  left : 20px;
 }
 
 button {

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Update Page</title>
 
     <style>
 
@@ -33,6 +33,16 @@ label {
   margin-bottom: 5px;
   position:relative;
   left : 10px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap; /* Ensures they wrap to the next line if the screen width is too small */
+    gap: 15px; /* Space between items */
+}
+
+.checkbox-group label {
+    margin-left: 5px;
 }
 
 input[type="text"],
@@ -105,14 +115,30 @@ button:hover {
       <label for="course">Course:</label>
     	<input type=text id="course" name="course" value="<%=student.getCourse()%>">
     	
-        <input type="checkbox" id="course1" name="course1" value="Java">
-  <label for="course1"> Java</label>
-  <input type="checkbox" id="course2" name="course2" value="Python">
-  <label for="course2"> Python</label>
-  <input type="checkbox" id="course3" name="course3" value="MERN">
-  <label for="course3"> MERN</label>
-    <input type="checkbox" id="course4" name="course4" value="Devops">
-  <label for="course4"> Devops</label>
+        
+        
+   <div class="checkbox-group">
+    <div>
+        <input type="checkbox" id="course1" name="course1" value="Java"
+            <%= student.getCourse().contains("Java") ? "checked disabled" : "" %> />
+        <label for="course1">Java</label>
+    </div>
+    <div>
+        <input type="checkbox" id="course2" name="course2" value="Python"
+            <%= student.getCourse().contains("Python") ? "checked disabled" : "" %> />
+        <label for="course2">Python</label>
+    </div>
+    <div>
+        <input type="checkbox" id="course3" name="course3" value="MERN"
+            <%= student.getCourse().contains("MERN") ? "checked disabled" : "" %> />
+        <label for="course3">MERN</label>
+    </div>
+    <div>
+        <input type="checkbox" id="course4" name="course4" value="Devops"
+            <%= student.getCourse().contains("Devops") ? "checked disabled" : "" %> />
+        <label for="course4">Devops</label>
+    </div>
+</div>
 
   <br>
      
@@ -145,7 +171,7 @@ button:hover {
       
       
       
-      <button type="submit">Edit</button>
+      <button type="submit">Save</button>
     </form>
   </div>
 
