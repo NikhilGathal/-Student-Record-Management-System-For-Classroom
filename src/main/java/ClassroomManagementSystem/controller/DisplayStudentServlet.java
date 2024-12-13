@@ -15,6 +15,8 @@ import ClassroomManagementSystem.dto.Student;
 
 @WebServlet("/display")
 public class DisplayStudentServlet extends HttpServlet {
+	
+	// updated Logic
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Create StudentDao to interact with the database
